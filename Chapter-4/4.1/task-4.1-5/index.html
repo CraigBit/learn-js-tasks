@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Создайте функцию multiplyNumeric(obj), которая умножает все числовые
+      свойства объекта obj на 2.
+    </p>
+
+    <script>
+      let menu = {
+        width: 200,
+        height: 300,
+        title: 'My menu',
+      };
+
+      function multiplyNumeric(obj) {
+        for (let key in obj) {
+          if (typeof obj[key] == 'number') obj[key] *= 2;
+        }
+        return obj;
+      }
+
+      console.log(multiplyNumeric(menu));
+    </script>
+  </body>
+</html>
