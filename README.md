@@ -1,6 +1,6 @@
-# learn-js-tasks
+LEARN-JS-TASKS
 
-<b>CHAPTER 2</b>
+# CHAPTER 2
 
 <em>2.1 TASK 1</em>
 
