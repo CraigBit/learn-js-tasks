@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Напишите условие if для проверки, что значение переменной age НЕ находится
+      в диапазоне 14 и 90 включительно. Напишите два варианта: первый с
+      использованием оператора НЕ !, второй – без этого оператора.
+    </p>
+
+    <script>
+      let age = 0;
+      // 1 вариант
+
+      if (!(age <= 90 && age >= 14)) {
+        console.log('Не в диапазоне');
+      } else {
+        console.log('В диапазоне');
+      }
+
+      // 2 вариант
+
+      if (age < 14 || age > 90) {
+        console.log('Не в диапазоне');
+      } else {
+        console.log('В диапазоне');
+      }
+    </script>
+  </body>
+</html>

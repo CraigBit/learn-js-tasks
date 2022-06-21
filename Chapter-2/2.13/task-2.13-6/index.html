@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Напишите цикл, который предлагает prompt ввести число, большее 100. Если
+      посетитель ввёл другое число – попросить ввести ещё раз, и так далее.
+    </p>
+    <p>
+      Цикл должен спрашивать число пока либо посетитель не введёт число, большее
+      100, либо не нажмёт кнопку Отмена (ESC).
+    </p>
+    <p>
+      Предполагается, что посетитель вводит только числа. Предусматривать
+      обработку нечисловых строк в этой задаче необязательно.
+    </p>
+    <script>
+      while (true) {
+        let number = +prompt('Введите число больше 100?');
+        if (!number) break;
+        if (number > 100) break;
+      }
+    </script>
+  </body>
+</html>
