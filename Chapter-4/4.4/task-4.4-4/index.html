@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Создайте объект calculator (калькулятор) с тремя методами:</p>
+
+    <ul>
+      <li>
+        read() (читать) запрашивает два значения и сохраняет их как свойства
+        объекта.
+      </li>
+      <li>sum() (суммировать) возвращает сумму сохранённых значений.</li>
+      <li>
+        mul() (умножить) перемножает сохранённые значения и возвращает
+        результат.
+      </li>
+    </ul>
+
+    <script>
+      let calculator = {
+        read() {
+          this.a = +prompt('Введите первое число');
+          this.b = +prompt('Введите второе число');
+        },
+
+        sum() {
+          return this.a + this.b;
+        },
+
+        mul() {
+          return this.a * this.b;
+        },
+      };
+
+      calculator.read();
+      alert(calculator.sum());
+      alert(calculator.mul());
+    </script>
+  </body>
+</html>
