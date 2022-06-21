@@ -191,4 +191,4 @@ LEARN-JS-TASKS
 
 <em>2.17 TASK 1</em>
 
-<p>Замените код Function Expression стрелочной функцией:</p>
+<p>Замените код Function Expression стрелочной функцией (функция в файле с задачей).</p>
