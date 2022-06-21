@@ -16,5 +16,14 @@
       Создайте функцию extractCurrencyValue(str), которая будет из такой строки
       выделять числовое значение и возвращать его.
     </p>
+
+    <script>
+      function extractCurrencyValue(str) {
+        let result = parseInt(str.slice(1));
+        console.log(result);
+        console.log(typeof result === 'number');
+      }
+      extractCurrencyValue('$120');
+    </script>
   </body>
 </html>
