@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым
+      символом.
+    </p>
+
+    <script>
+      let string = 'вася';
+      let string1 = 'лена';
+      let string2 = 'петя';
+      function ucFirst(str) {
+        let firstSymbol = str.charAt(0).toUpperCase();
+        let result = firstSymbol + str.slice(1);
+        console.log(result);
+      }
+
+      ucFirst(string);
+      ucFirst(string1);
+      ucFirst(string2);
+    </script>
+  </body>
+</html>
