@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Напишите функцию randomInteger(min, max), которая генерирует случайное
+      целое (integer) число от min до max (включительно).
+    </p>
+    <script>
+      function randomInteger(min, max) {
+        let rand = Math.trunc(min + Math.random() * (max + 1 - min));
+        console.log(`Случайное число: ${rand}`);
+      }
+      randomInteger(10, 20);
+      randomInteger(10, 20);
+      randomInteger(10, 20);
+      randomInteger(10, 20);
+      randomInteger(10, 20);
+    </script>
+  </body>
+</html>

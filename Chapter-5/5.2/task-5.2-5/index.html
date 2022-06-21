@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Напишите функцию random(min, max), которая генерирует случайное число с
+      плавающей точкой от min до max (но не включая max).
+    </p>
+    <script>
+      function random(min, max) {
+        let rand = min + Math.random() * (max - min);
+        console.log(`Случайное число: ${rand}`);
+      }
+      random(100, 200);
+      random(100, 200);
+      random(100, 200);
+      random(100, 200);
+      random(100, 200);
+    </script>
+  </body>
+</html>
