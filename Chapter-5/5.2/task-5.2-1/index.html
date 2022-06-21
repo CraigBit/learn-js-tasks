@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Почему в примере ниже 6.35 округляется до 6.3?</p>
+
+    <p><b>alert( 6.35.toFixed(1) ); // 6.3</b></p>
+
+    <p>Как правильно округлить 6.35?</p>
+
+    <script>
+      // 6.35 должно округляться до 6.4, но 0.35 - бесконечная дробь для двоичной системы, поэтому идет потеря точности. Нужно преобразовать число к более понятному для двоичной системы формату путем умножения. Затем нужно округлить умноженное число и далее привести его к изначальному виду с помощью деления.
+
+      let number = 6.35 * 10;
+      let result = Math.round(number) / 10;
+      console.log(result);
+    </script>
+  </body>
+</html>
