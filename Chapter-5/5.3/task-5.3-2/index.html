@@ -12,5 +12,19 @@
       'viagra' или 'XXX', а иначе false.
     </p>
     <p>Функция должна быть нечувствительна к регистру</p>
+
+    <script>
+      function checkSpam(str) {
+        let test = str.toLowerCase();
+        if (test.includes('viagra') || test.includes('xxx')) {
+          return console.log(true);
+        }
+        return console.log(false);
+      }
+
+      checkSpam('buy ViAgRA now');
+      checkSpam('free xxxxx');
+      checkSpam('innocent rabbit');
+    </script>
   </body>
 </html>
