@@ -25,5 +25,30 @@
       P.S. Ноль 0 – считается числом, не останавливайте ввод значений при вводе
       «0».
     </p>
+
+    <script>
+      function sumInput() {
+        let numbersArray = [];
+
+        while (true) {
+          let number = prompt('Введите число');
+          console.log(number);
+
+          if (!isFinite(number) || number === null || number === '') {
+            break;
+          } else {
+            numbersArray.push(+number);
+          }
+        }
+
+        let sum = 0;
+        for (let i = 0; i < numbersArray.length; i++) {
+          sum += numbersArray[i];
+        }
+        return sum;
+      }
+
+      console.log(sumInput());
+    </script>
   </body>
 </html>
