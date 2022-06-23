@@ -11,5 +11,18 @@
       Напишите функцию getWeekDay(date), показывающую день недели в коротком
       формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС».
     </p>
+
+    <script>
+      let date = new Date(2012, 0, 3);
+
+      function getWeekDay(date) {
+        let index = date.getDay();
+
+        let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+        let result = days[index];
+        return result;
+      }
+      console.log(getWeekDay(date)); // ВТ
+    </script>
   </body>
 </html>
