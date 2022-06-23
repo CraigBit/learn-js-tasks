@@ -15,5 +15,22 @@
     <p>
       То есть дефисы удаляются, а все слова после них получают заглавную букву.
     </p>
+
+    <script>
+      function camelize(str) {
+        let newArray = str.split('-');
+        let inUpperCase = newArray.map(function (item, index) {
+          if (index === 0) {
+            return item;
+          }
+          return item[0].toUpperCase() + item.slice(1);
+        });
+        let result = inUpperCase.join('');
+        return result;
+      }
+      console.log(camelize('background-color')); // == 'backgroundColor';
+      console.log(camelize('list-style-image')); // == 'listStyleImage';
+      console.log(camelize('-webkit-transition')); // == 'WebkitTransition';
+    </script>
   </body>
 </html>
