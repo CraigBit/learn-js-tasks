@@ -16,5 +16,21 @@
       Напишите функцию getLocalDay(date), которая возвращает «европейский» день
       недели для даты date.
     </p>
+
+    <script>
+      let date = new Date(2012, 0, 3);
+      let date1 = new Date(2012, 0, 1);
+
+      function getLocalDay(date) {
+        let day = date.getDay();
+
+        let result = day === 0 ? 7 : day;
+
+        return result;
+      }
+
+      console.log(getLocalDay(date)); // 2
+      console.log(getLocalDay(date1)); // 7
+    </script>
   </body>
 </html>
