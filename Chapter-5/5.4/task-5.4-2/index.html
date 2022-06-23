@@ -19,5 +19,16 @@
       <li>Удалите первый элемент массива и покажите его.</li>
       <li>Вставьте Рэп и Регги в начало массива</li>
     </ol>
+
+    <script>
+      let styles = ['Джаз', 'Блюз'];
+      styles.push('Рок-н-ролл');
+      styles[Math.floor((styles.length - 1) / 2)] = 'Классика';
+      console.log(styles);
+      let shiftedElem = styles.shift();
+      console.log(shiftedElem);
+      styles.unshift('Рэп', 'Регги');
+      console.log(styles);
+    </script>
   </body>
 </html>
