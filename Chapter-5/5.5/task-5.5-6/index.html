@@ -12,4 +12,41 @@
       объекты калькулятора.
     </p>
   </body>
+
+  <script>
+    function Calculator() {
+      this['+'] = (a, b) => a + b;
+      this['-'] = (a, b) => a - b;
+
+      this.isValid = function (value1, value2, operator) {
+        return (
+          isFinite(value1) &&
+          isFinite(value2) &&
+          !(operator == '/' && value2 == 0) &&
+          this[operator]
+        );
+      };
+
+      this.calculate = function (str) {
+        str = str.split(' ');
+        let operator = str[1];
+
+        if (!this.isValid(+str[0], +str[2], operator)) return null;
+
+        return this[operator](+str[0], +str[2]);
+      };
+
+      this.addMethod = function (name, func) {
+        this[name] = func;
+      };
+    }
+
+    let powerCalc = new Calculator();
+    powerCalc.addMethod('*', (a, b) => a * b);
+    powerCalc.addMethod('/', (a, b) => a / b);
+    powerCalc.addMethod('**', (a, b) => a ** b);
+
+    let result = powerCalc.calculate('2 ** 3');
+    alert(result == null ? 'ошибка' : result); // 8
+  </script>
 </html>
