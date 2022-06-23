@@ -13,5 +13,25 @@
       Напишите функцию unique(arr), которая возвращает массив, содержащий только
       уникальные элементы arr.
     </p>
+
+    <script>
+      let strings = [
+        'кришна',
+        'кришна',
+        'харе',
+        'харе',
+        'харе',
+        'харе',
+        'кришна',
+        'кришна',
+        ':-O',
+      ];
+
+      function unique(arr) {
+        return Array.from(new Set(arr));
+      }
+
+      console.log(unique(strings));
+    </script>
   </body>
 </html>
