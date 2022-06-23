@@ -16,5 +16,21 @@
       Формула вычисления среднего арифметического значения: (age1 + age2 + ... +
       ageN) / N.
     </p>
+
+    <script>
+      let vasya = { name: 'Вася', age: 25 };
+      let petya = { name: 'Петя', age: 30 };
+      let masha = { name: 'Маша', age: 29 };
+
+      let arr = [vasya, petya, masha];
+
+      function getAverageAge(users) {
+        let result =
+          users.reduce((acc, user) => acc + user.age, 0) / users.length;
+        return result;
+      }
+
+      console.log(getAverageAge(arr));
+    </script>
   </body>
 </html>
