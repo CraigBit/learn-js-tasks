@@ -10,5 +10,17 @@
     <p>
       Написать функцию factorial(n), которая возвращает n!, используя рекурсию.
     </p>
+
+    <script>
+      function factorial(n) {
+        if (n !== 1) {
+          n *= factorial(n - 1);
+        }
+
+        return n;
+      }
+
+      console.log(factorial(5));
+    </script>
   </body>
 </html>
