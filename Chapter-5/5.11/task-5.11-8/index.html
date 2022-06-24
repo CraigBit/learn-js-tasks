@@ -24,5 +24,52 @@
         "день.месяц.год часы:минуты", всё в виде двух цифр, т.е. 31.12.16 10:00.
       </li>
     </ul>
+
+    <script>
+      function formatDate(date) {
+        // если прошло меньше секунды
+
+        let result = new Date() - date;
+
+        if (result < 1000) {
+          return 'прямо сейчас';
+        }
+
+        // если прошло меньше минуты
+
+        let sec = Math.floor(result / 1000);
+
+        if (sec < 60) {
+          return `${sec} сек. назад`;
+        }
+
+        // если прошло меньше часа
+
+        let min = Math.floor(result / 60000);
+        if (min < 60) {
+          return `${min} мин. назад`;
+        }
+
+        // в противном случае, если ничего не подходит
+
+        let d = date;
+        d = [
+          '0' + d.getDate(),
+          '0' + (d.getMonth() + 1),
+          '' + d.getFullYear(),
+          '0' + d.getHours(),
+          '0' + d.getMinutes(),
+        ].map((component) => component.slice(-2));
+        console.log(d);
+
+        // соединить компоненты в дату
+        return `${d.slice(0, 3).join('.')} ${d.slice(3).join(':')}`;
+      }
+
+      alert(formatDate(new Date(new Date() - 1)));
+      alert(formatDate(new Date(new Date() - 30 * 1000)));
+      alert(formatDate(new Date(new Date() - 5 * 60 * 1000)));
+      alert(formatDate(new Date(new Date() - 86400 * 1000)));
+    </script>
   </body>
 </html>
