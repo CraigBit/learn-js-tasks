@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Вызов askPassword() в приведённом ниже коде должен проверить пароль и
+      затем вызвать user.loginOk/loginFail в зависимости от ответа.
+    </p>
+
+    <p>Однако, его вызов приводит к ошибке. Почему?</p>
+
+    <p>
+      Исправьте выделенную строку, чтобы всё работало (других строк изменять не
+      надо).
+    </p>
+
+    <script>
+      function askPassword(ok, fail) {
+        let password = prompt('Password?', '');
+        if (password == 'rockstar') ok();
+        else fail();
+      }
+
+      let user = {
+        name: 'Вася',
+
+        loginOk() {
+          alert(`${this.name} logged in`);
+        },
+
+        loginFail() {
+          alert(`${this.name} failed to log in`);
+        },
+      };
+
+      // это была выделенная строка, исправил через привязывание контекста
+      askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+    </script>
+  </body>
+</html>
