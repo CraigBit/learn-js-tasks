@@ -11,5 +11,26 @@
       Почините код, чтобы он выводил порядковые номера каждого стрелка из
       массива.
     </p>
+
+    <script>
+      function makeArmy() {
+        let shooters = [];
+
+        for (let i = 0; i < 10; i++) {
+          let shooter = function () {
+            alert(i);
+          };
+          shooters.push(shooter);
+        }
+
+        return shooters;
+      }
+
+      let army = makeArmy();
+
+      army[1]();
+      army[5]();
+      army[9]();
+    </script>
   </body>
 </html>
