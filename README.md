@@ -722,3 +722,11 @@ LEARN-JS-TASKS
 	<li>Сохраните ваш код в файл extended-clock.js.</li>
 	<li>Не изменяйте класс clock.js. Расширьте его.</li>
 </ul>
+
+# CHAPTER 10
+
+<em>10.2 TASK 1</em>
+
+<p>Создайте класс FormatError, который наследует от встроенного класса SyntaxError.</p>
+
+<p>Класс должен поддерживать свойства message, name и stack.</p>
