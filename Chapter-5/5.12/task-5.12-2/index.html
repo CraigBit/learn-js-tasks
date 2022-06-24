@@ -9,9 +9,29 @@
   <body>
     <p>
       Напишите функцию replacer для JSON-преобразования, которая удалит
-      свойства, ссылающиеся на meetup (сама функция находится в файле с задачей
+      свойства, ссылающиеся на meetup (сама функция находится в файле с
+      задачей).
     </p>
 
-    <script></script>
+    <script>
+      let room = {
+        number: 23,
+      };
+
+      let meetup = {
+        title: 'Совещание',
+        occupiedBy: [{ name: 'Иванов' }, { name: 'Петров' }],
+        place: room,
+      };
+
+      room.occupiedBy = meetup;
+      meetup.self = meetup;
+
+      console.log(
+        JSON.stringify(meetup, function replacer(key, value) {
+          return key != '' && value == meetup ? undefined : value;
+        })
+      );
+    </script>
   </body>
 </html>
