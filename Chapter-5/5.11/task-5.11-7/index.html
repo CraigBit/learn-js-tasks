@@ -16,5 +16,25 @@
       P.S. Функция должна работать в любой день, т.е. в ней не должно быть
       конкретного значения сегодняшней даты.
     </p>
+
+    <script>
+      let totalSecondsInADay = 86400;
+
+      function getSecondsToTomorrow() {
+        let totalSeconds = 86400;
+
+        let now = new Date();
+        let hour = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+
+        let todaySeconds = (hour * 60 + minutes) * 60 + seconds;
+
+        let result = totalSeconds - todaySeconds;
+        return result;
+      }
+
+      alert(getSecondsToTomorrow());
+    </script>
   </body>
 </html>
