@@ -18,5 +18,36 @@
       <li>Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) for n > 1.</li>
       <li>С использованием формулы арифметической прогрессии.</li>
     </ol>
+
+    <script>
+      // 1) цикл
+      function sumTo(n) {
+        let sum = 0;
+        while (n >= 1) {
+          sum += n;
+          n--;
+        }
+        return sum;
+      }
+
+      console.log(sumTo(100));
+
+      // 2) рекурсия
+
+      function sumTo(n) {
+        if (n == 1) return 1;
+        return n + sumTo(n - 1);
+      }
+
+      console.log(sumTo(100));
+
+      // 3) формула
+
+      function sumTo(n) {
+        return (n * (n + 1)) / 2;
+      }
+
+      console.log(sumTo(100));
+    </script>
   </body>
 </html>
