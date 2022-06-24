@@ -16,5 +16,15 @@
       Функция должна работать в любой день, т.е. в ней не должно быть
       конкретного значения сегодняшней даты.
     </p>
+
+    <script>
+      function getSecondsToday() {
+        let d = new Date();
+        let result = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+        return result;
+      }
+
+      alert(getSecondsToday());
+    </script>
   </body>
 </html>
