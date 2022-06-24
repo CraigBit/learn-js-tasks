@@ -11,5 +11,17 @@
       Добавьте всем функциям в прототип метод defer(ms), который возвращает
       обёртку, откладывающую вызов функции на ms миллисекунд.
     </p>
+
+    <script>
+      Function.prototype.defer = function (ms) {
+        return (a, b) => setTimeout(this, ms, a, b);
+      };
+
+      function f(a, b) {
+        alert(a + b);
+      }
+
+      f.defer(1000)(1, 2); // выведет 3 через 1 секунду.
+    </script>
   </body>
 </html>
