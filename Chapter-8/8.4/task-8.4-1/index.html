@@ -17,5 +17,24 @@
       ключей, разделённых запятой. Ваш toString не должен выводиться при
       итерации объекта с помощью цикла for..in.
     </p>
+
+    <script>
+      let dictionary = Object.create(null);
+
+      Object.defineProperty(dictionary, 'toString', {
+        value: function () {
+          return Object.keys(this).toString();
+        },
+      });
+
+      dictionary.apple = 'Apple';
+      dictionary.__proto__ = 'test';
+
+      for (let key in dictionary) {
+        alert(key); // "apple", затем "__proto__"
+      }
+
+      alert(dictionary); // "apple,__proto__"
+    </script>
   </body>
 </html>
