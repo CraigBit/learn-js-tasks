@@ -17,5 +17,21 @@
       <li>counter.set(value) должен устанавливать счётчику значение value.</li>
       <li>counter.decrease() должен уменьшать значение счётчика на 1.</li>
     </ul>
+
+    <script>
+      function makeCounter() {
+        let count = 0;
+
+        function counter() {
+          return count++;
+        }
+
+        counter.set = (value) => (count = value);
+
+        counter.decrease = () => count--;
+
+        return counter;
+      }
+    </script>
   </body>
 </html>
