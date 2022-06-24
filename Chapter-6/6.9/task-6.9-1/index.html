@@ -13,5 +13,31 @@
     </p>
 
     <p>Каждый вызов должен сохраняться как массив аргументов.</p>
+
+    <script>
+      function spy(func) {
+        let spiedCalls = [];
+
+        return function spied(...args) {
+          spiedCalls.push(args);
+          spied.calls = spiedCalls;
+
+          return func.apply(this, args);
+        };
+      }
+
+      function work(a, b) {
+        alert(a + b);
+      }
+
+      work = spy(work);
+
+      work(1, 2);
+      work(4, 5);
+
+      for (let args of work.calls) {
+        alert('call:' + args.join()); // "call:1,2", "call:4,5"
+      }
+    </script>
   </body>
 </html>
