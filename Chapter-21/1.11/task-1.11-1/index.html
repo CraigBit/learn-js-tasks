@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.onclick = function (e) {
+        // показывает координаты точки клика
+        coords.innerHTML = e.clientX + ':' + e.clientY;
+      };
+    </script>
+  </head>
+  <body>
+    <!-- <p>Используйте JavaScript, чтобы найти координаты углов</p> -->
+
+    <!-- <p>
+      P.S. Код должен работать, если у элемента другие размеры или есть рамка,
+      без привязки к конкретным числам.
+    </p> -->
+
+    Кликните в любом месте для получения координат в контексте окна.
+    <br />
+    Это для тестирования, чтобы проверить результат, который вы получили с
+    помощью JavaScript.
+    <br />
+    <div id="coords">(координаты покажутся здесь)</div>
+    <br />
+
+    <div id="field">
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+      .
+    </div>
+
+    <div class="triangle-right" style="left: -20px; top: -176px">1</div>
+    <div class="triangle-right" style="left: -10px; top: -178px">3</div>
+    <div class="triangle-right" style="left: 190px; top: -40px">4</div>
+    <div class="triangle-right" style="left: 200px; top: -42px">2</div>
+
+    <script>
+      let field = document.getElementById('field');
+      let fieldCoords = field.getBoundingClientRect();
+
+      // левый верхний и нижний правый углы
+
+      let topLeftAngle = [fieldCoords.left, fieldCoords.top];
+      console.log(topLeftAngle);
+
+      let bottomRightAngle = [fieldCoords.right, fieldCoords.bottom];
+      console.log(bottomRightAngle);
+
+      // верхний левый внутренний угол
+
+      let topLeftInnerAngle = [
+        fieldCoords.left + field.clientLeft,
+        fieldCoords.top + field.clientTop,
+      ];
+      console.log(topLeftInnerAngle);
+
+      // нижний правый внутренний угол
+
+      let bottomRightInnerAngle = [
+        fieldCoords.right - field.clientLeft,
+        fieldCoords.bottom - field.clientTop,
+      ];
+      console.log(bottomRightInnerAngle);
+
+      //
+    </script>
+  </body>
+</html>
