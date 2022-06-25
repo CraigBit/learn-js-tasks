@@ -7,12 +7,29 @@
     <title>Document</title>
   </head>
   <body>
-    <p>Напишите код, как получить…</p>
+    <!-- Напишите код, как получить…
+			элемент 'div'?
+			'ul'?
+			второй 'li' (с именем Пит)?
+		-->
 
+    <!-- Для страницы: -->
+
+    <div>Пользователи:</div>
     <ul>
-      <li>элемент 'div'?</li>
-      <li>'ul'?</li>
-      <li>второй 'li' (с именем Пит)?</li>
+      <li>Джон</li>
+      <li>Пит</li>
     </ul>
+
+    <script>
+      let firstElem = document.body.children[0];
+      console.log(firstElem);
+
+      let lastElem = document.body.children[1];
+      console.log(lastElem);
+
+      let liElem = document.body.children[1].children[1];
+      console.log(liElem);
+    </script>
   </body>
 </html>
