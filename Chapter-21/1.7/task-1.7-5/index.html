@@ -9,5 +9,46 @@
   <body>
     <!-- <p>Напишите функцию createTree, которая создаёт вложенный список ul/li из
       объекта.</p> -->
+
+    <div id="container"></div>
+
+    <script>
+      let container = document.getElementById('container');
+
+      let data = {
+        Рыбы: {
+          форель: {},
+          лосось: {},
+        },
+
+        Деревья: {
+          Огромные: {
+            секвойя: {},
+            дуб: {},
+          },
+          Цветковые: {
+            яблоня: {},
+            магнолия: {},
+          },
+        },
+      };
+
+      function createTree(elem, data) {
+        if (Object.keys(data).length == 0) return;
+
+        let ul = document.createElement('ul');
+
+        for (let prop in data) {
+          let li = document.createElement('li');
+          li.textContent = prop;
+          ul.append(li);
+          createTree(li, data[prop]);
+        }
+
+        return elem.append(ul);
+      }
+
+      createTree(container, data);
+    </script>
   </body>
 </html>
