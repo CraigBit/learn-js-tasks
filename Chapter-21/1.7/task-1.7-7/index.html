@@ -5,6 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      td,
+      th {
+        border: 1px solid black;
+        padding: 3px;
+        text-align: center;
+      }
+
+      th {
+        font-weight: bold;
+        background-color: #e6e6e6;
+      }
+    </style>
   </head>
   <body>
     <!-- <p>Напишите функцию createCalendar(elem, year, month).</p> -->
@@ -17,5 +35,65 @@
       У таблицы должен быть заголовок с названиями дней недели, каждый день –
       'th', первым днём недели должен быть понедельник.
     </p> -->
+
+    <div id="calendar"></div>
+
+    <script>
+      let days = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
+      let calendar = document.querySelector('#calendar');
+      let cell;
+      let d = 0;
+
+      function createCalendar(elem, year, month) {
+        let table = document.createElement('table');
+        let tr = document.createElement('tr');
+        table.append(tr);
+
+        for (let i = 0; i < 7; i++) {
+          let th = document.createElement('th');
+          th.innerHTML = days[i];
+          tr.append(th);
+        }
+
+        let date = new Date(year, month - 1);
+        let colDay = new Date(year, month, 0);
+        colDay = colDay.getDate();
+
+        if (!date.getDay()) {
+          dayWeek = 7;
+        } else {
+          dayWeek = date.getDay();
+        }
+
+        if ((dayWeek + colDay - 1) % 7) {
+          cell = (Math.floor((dayWeek + colDay - 1) / 7) + 1) * 7;
+        } else {
+          cell = dayWeek + colDay - 1;
+        }
+
+        let k = cell / 7;
+
+        for (i = 0; i < k; i++) {
+          let tr = document.createElement('tr');
+          table.append(tr);
+
+          for (let j = 0; j < 7; j++) {
+            let td = document.createElement('td');
+            tr.append(td);
+          }
+        }
+
+        let tds = table.querySelectorAll('td');
+
+        for (let i = dayWeek - 1; i < colDay + dayWeek - 1; i++) {
+          d++;
+          tds[i].innerHTML = d;
+        }
+
+        elem.append(table);
+      }
+
+      createCalendar(calendar, 2022, 6);
+    </script>
   </body>
 </html>
