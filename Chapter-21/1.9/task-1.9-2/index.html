@@ -19,5 +19,18 @@
       P.S. Ваш код должен работать в любом HTML-документе, независимо от его
       содержимого.
     </p>
+
+    <script>
+      let div = document.createElement('div');
+
+      div.style.overflowY = 'scroll';
+      div.style.width = '50px';
+      div.style.height = '50px';
+      document.body.append(div);
+
+      const scrollbarWidth = div.offsetWidth - div.clientWidth - div.clientLeft;
+
+      console.log(scrollbarWidth); // 17 у меня выдало
+    </script>
   </body>
 </html>
