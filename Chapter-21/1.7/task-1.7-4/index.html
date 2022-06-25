@@ -23,5 +23,20 @@
     <!-- <p>Все элементы должны создаваться динамически.</p> -->
 
     <!-- <p>Если пользователь вводит HTML-теги, они должны обрабатываться как текст.</p> -->
+
+    <ul></ul>
+
+    <script>
+      const ul = document.querySelector('ul');
+      let text;
+      do {
+        text = prompt('New element for a list!');
+        if (text) {
+          const li = document.createElement('li');
+          li.textContent = text;
+          ul.append(li);
+        }
+      } while (text);
+    </script>
   </body>
 </html>
