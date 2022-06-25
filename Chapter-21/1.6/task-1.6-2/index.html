@@ -7,13 +7,38 @@
     <title>Document</title>
   </head>
   <body>
-    <p>Сделайте все внешние ссылки оранжевыми, изменяя их свойство style.</p>
+    <!-- <p>Сделайте все внешние ссылки оранжевыми, изменяя их свойство style.</p> -->
 
-    <p>Ссылка является внешней, если:</p>
+    <!-- <p>Ссылка является внешней, если:</p> -->
 
-    <ul>
+    <!-- <ul>
       <li>Её href содержит ://</li>
       <li>Но не начинается с http://internal.com.</li>
+    </ul> -->
+
+    <a name="list">the list</a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
     </ul>
+
+    <script>
+      let linksList = document.querySelectorAll('a');
+
+      linksList.forEach((item) => {
+        if (
+          item.getAttribute('href') &&
+          !item.getAttribute('href').includes('http://internal.com')
+        ) {
+          item.getAttribute('href').includes('//')
+            ? (item.style.color = 'orange')
+            : false;
+        }
+      });
+    </script>
   </body>
 </html>
