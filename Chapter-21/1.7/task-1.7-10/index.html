@@ -8,5 +8,54 @@
   </head>
   <body>
     <!-- <p>Напишите код для сортировки по столбцу "name".</p> -->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Pete</td>
+          <td>Brown</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Ann</td>
+          <td>Lee</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Jack</td>
+          <td>Cross</td>
+          <td>95</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
+
+  <script>
+    let rowsAll = Array.from(document.getElementsByTagName('tr'));
+    console.log(rowsAll);
+
+    let rowsName = rowsAll.slice(1);
+
+    let sortedRows = rowsName.sort((rowA, rowB) => {
+      return rowA.querySelector('td:first-child').innerHTML >
+        rowB.querySelector('td:first-child').innerHTML
+        ? 1
+        : -1;
+    });
+
+    let tbody = document.querySelector('tbody');
+    tbody.append(...rowsName);
+  </script>
 </html>
