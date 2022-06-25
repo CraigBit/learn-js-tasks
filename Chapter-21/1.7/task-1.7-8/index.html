@@ -5,11 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .hour {
+        color: red;
+      }
+
+      .min {
+        color: green;
+      }
+
+      .sec {
+        color: blue;
+      }
+    </style>
   </head>
   <body>
     <!-- <p>Создайте цветные часы</p> -->
 
     <!-- <p>Для стилизации используйте HTML/CSS, JavaScript должен только обновлять
       время в элементах.</p> -->
+
+    <div id="clock">
+      <span class="hour">hh</span>:<span class="min">mm</span>:<span class="sec"
+        >ss</span
+      >
+    </div>
+
+    <!-- клик по этой кнопке вызовет clockStart() -->
+    <input type="button" onclick="clockStart()" value="Старт" />
+
+    <!-- клик по этой кнопке вызовет clockStop() -->
+    <input type="button" onclick="clockStop()" value="Стоп" />
+
+    <script>
+      let hour = document.querySelector('.hour');
+      let minute = document.querySelector('.min');
+      let second = document.querySelector('.sec');
+
+      function update() {
+        let date = new Date();
+        hour.textContent = String(date.getHours()).padStart(2, '0');
+        minute.textContent = String(date.getMinutes()).padStart(2, '0');
+        second.textContent = String(date.getSeconds()).padStart(2, '0');
+      }
+
+      let timerId;
+
+      function clockStart() {
+        // запустить часы
+        timerId = setInterval(update, 1000);
+        update(); // (*)
+      }
+
+      function clockStop() {
+        clearInterval(timerId);
+        timerId = null;
+      }
+    </script>
   </body>
 </html>
