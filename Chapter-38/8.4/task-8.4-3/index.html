@@ -5,6 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .nav {
+        height: 40px;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+      }
+      ul {
+        display: inline-block;
+        padding-left: 0;
+      }
+      li {
+        list-style: none;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .left {
+        float: left;
+        cursor: pointer;
+      }
+      .right {
+        float: right;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <!-- <p>Оформите навигацию, центрированную внутри DIV'а:</p> -->
@@ -22,5 +47,36 @@
         pointer
       </li>
     </ul> -->
+
+    Текст Сверху
+
+    <div class="nav">
+      <img
+        src="https://js.cx/clipart/arrow-left.jpg"
+        class="left"
+        width="40"
+        height="40"
+      />
+
+      <ul class="pages">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+      </ul>
+
+      <img
+        src="https://js.cx/clipart/arrow-right.jpg"
+        class="right"
+        width="40"
+        height="40"
+      />
+    </div>
+    Текст Снизу
   </body>
 </html>
