@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      .left {
+        float: left;
+        width: 30%;
+        background: #aef;
+      }
+
+      .right {
+        float: right;
+        width: 70%;
+        background: tan;
+
+        box-sizing: border-box;
+
+        border-left: 2px solid black;
+        padding: 0px 0px 0px 15px;
+      }
+    </style>
   </head>
   <body>
     <!-- <p>Есть две колонки 30%/70%:</p> -->
@@ -17,5 +36,8 @@
       Желательно не трогать свойство width ни слева ни справа и не создавать
       дополнительных элементов.
     </p> -->
+
+    <div class="left">Левая<br />Колонка</div>
+    <div class="right">Правая<br />Колонка<br />...</div>
   </body>
 </html>
